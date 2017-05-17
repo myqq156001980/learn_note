@@ -1,5 +1,12 @@
 # windows 10 发布者不受信
 
+## 编辑注册表
+  HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Associations
+  
+>如果没有Associations 新建一个项 在Associations 项下面建立LowRiskFileTypes(字符串值) value 填写需要运行的文件后缀名，例如：.exe 允许exe运行
+
+
+## 更改用户策略
 1. “win+x”进入控制面板，选择安全性与维护，在左侧更改windows smartscreen筛选器设置，选择"不执行任何操作"，单击确定即可。
 
 2. “win+x”进入控制面板，选择用户账户，选择最下面的“更改用户账户控制设置”，把滑条拉到最下面“从不通知”。
