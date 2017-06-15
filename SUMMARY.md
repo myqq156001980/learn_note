@@ -9,7 +9,7 @@
 * [javascript](javascript.md)
   * [angular 跨域 post](javascript/angular-kua-yu-post.md)
   * [nodejs 安装阿里源](javascript/nodejs-an-zhuang-a-li-yuan.md)
-  * js call apply bind
+  * [js call apply bind](javascript/js-call-apply-bind.md)
 * [linux](linux.md)
   * [linux 文件夹转跳](linux/linux-wen-jian-jia-zhuan-tiao.md)
   * [ubuntu安装chrome](linux/ubuntuan-zhuang-chrome.md)
