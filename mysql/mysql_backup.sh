@@ -12,9 +12,9 @@
 # db_passwd is mysql password 
 # db_host is mysql host 
 # ----------------------------- 
-db_user="root" 
-db_passwd="root" 
-db_host="localhost" 
+db_user='root'
+db_passwd='root' 
+db_host='localhost' 
 # the directory for story your backup file. 
 backup_dir="/root/mybackup" 
 # date format for backup file (dd-mm-yyyy) 
