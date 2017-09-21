@@ -14,7 +14,8 @@
 # ----------------------------- 
 db_user='root'
 db_passwd='root' 
-db_host='localhost' 
+db_host='localhost'
+db_store_days=30
 # the directory for story your backup file. 
 backup_dir="/root/mybackup" 
 # date format for backup file (dd-mm-yyyy) 
@@ -37,10 +38,11 @@ do
 $MYSQLDUMP -u $db_user -h $db_host -p$db_passwd $db | $GZIP -9 > "$backup_dir/backup.0/$time.$db.gz" 
 done 
 # delete the oldest backup 
-test -d "$backup_dir/backup.5/" && $RM -rf "$backup_dir/backup.5" 
+test -d "$backup_dir/backup.${db_store_days}/" && $RM -rf "$backup_dir/backup.${db_store_days}" 
 # rotate backup directory 
 #for int in 4 3 2 1 0 
-for int in {4..0}
+#for int in {4..0}
+for((int=`expr $db_store_days - 1`; int>=0; int--))
 do 
 if(test -d "$backup_dir"/backup."$int") 
 then 
