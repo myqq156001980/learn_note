@@ -39,7 +39,8 @@ done
 # delete the oldest backup 
 test -d "$backup_dir/backup.5/" && $RM -rf "$backup_dir/backup.5" 
 # rotate backup directory 
-for int in 4 3 2 1 0 
+#for int in 4 3 2 1 0 
+for int in {4..0}
 do 
 if(test -d "$backup_dir"/backup."$int") 
 then 
