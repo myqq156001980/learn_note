@@ -1,11 +1,11 @@
 #!/bin/bash
 
 profile=$1
-workSpace=dc-workspace
+workSpace=$HOME/dc-workspace
 projectName=DcClouds
-gitUrl=
-projectPath=HOME/$workSpace/$projectName
-deployPath=
+gitUrl=git@gitlab.digitalchina.com:shipy/DcCloud.git
+projectPath=$workSpace/$projectName
+deployPath=/root/.jenkins/jobs/DcCloud_online1/workspace/
 
 function compile() {
 	cd $projectPath
@@ -19,9 +19,12 @@ function compile() {
 
 function cpWar() {
 	if  [ ! -n "$profile" ] ;then
-		warName=
+		warName=DcCloud_dev.war
+	elif [[ "$profile"x = "Online"x ]]; then
+		#statements
+		warName=DcCloud_online.war
 	else
-		warName=
+		warName=DcCloud_dev.war
 	fi
 
 	cp ${projectPath}/target/$warName $deployPath
@@ -29,6 +32,11 @@ function cpWar() {
 }
 
 function getCode() {
+	if [ ! -d "$workSpace" ]; then
+		mkdir -p $workSpace
+	fi
+
+
 	if [ -d "$projectPath" ]; then
 		cd $projectPath
 		git pull
