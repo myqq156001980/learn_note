@@ -110,6 +110,12 @@
                         <descriptorRefs>
                             <descriptorRef>jar-with-dependencies</descriptorRef>
                         </descriptorRefs>
+                        <archive>　 　 　 　 　 　
+                            <manifest>　 　 　 　 　 　 　
+                                <addClasspath>true</addClasspath>　 　 　 　 　 　 　
+                                <mainClass>DemoSelenium</mainClass>　 　 　 　 　 　
+                            </manifest>                        　 　 　 　 　
+                        </archive>
                     </configuration>
                     <executions>
                         <execution>
