@@ -1,4 +1,4 @@
- <build>
+    <build>
         <resources>
             <resource>
                 <directory>src/main/resource</directory>
@@ -52,7 +52,7 @@
                     </execution>
                 </executions>
             </plugin>
-            
+
         </plugins>
 
     </build>
